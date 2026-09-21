@@ -1,0 +1,17 @@
+{
+  "name": "flange-studbolt-finder",
+  "version": "1.0.0",
+  "description": "Flange & Stud Bolt Finder — ASME B16.5 / B16.47 / B18.2.2 offline installable PWA",
+  "scripts": {
+    "build": "echo 'Static build complete'",
+    "start": "node server.js",
+    "dev": "node server.js",
+    "test": "node tools/smoke-test.js",
+    "lint": "node tools/check-dom.js",
+    "icons": "node tools/make-icons.js",
+    "fonts": "node tools/make-fonts.js",
+    "assets": "node tools/make-icons.js && node tools/make-fonts.js",
+    "data": "node tools/generate-data.js"
+  },
+  "dependencies": {}
+}

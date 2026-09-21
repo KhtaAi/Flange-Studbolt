@@ -1,0 +1,6 @@
+{
+  "name": "فلنج و استادبول یاب | Flange & Stud Bolt Finder",
+  "description": "جستجوی آفلاین تعداد و اندازه استادبول، طول استادبول و سایز آچار مهره برای فلنجهای ASME B16.5 و ASME B16.47",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,21 @@
+{
+  "_meta": {
+    "description": "Default calculation settings for Flange & Stud Bolt Finder",
+    "units": "mm",
+    "note": "stud length = flange_count x flange_thickness + gasket + 2 x nut height + thread projection"
+  },
+  "thread_projection_mm": 6,
+  "spiral_wound_gasket_thickness_mm": 4.5,
+  "flat_gasket_thickness_mm": 3,
+  "rtj_gasket_thickness_mm": 12.7,
+  "nut_height_method": "heavy_hex_table",
+  "flange_count": 2,
+  "round_stud_length": "up_1mm",
+  "stud_length_warn_delta_mm": 6,
+  "default_flange_face": "RF",
+  "default_gasket_type": "spiral_wound",
+  "show_only_available_classes": true,
+  "max_history_items": 30,
+  "theme": "dark",
+  "language": "fa"
+}

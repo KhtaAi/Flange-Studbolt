@@ -1,0 +1,24 @@
+# ---------- سیستم‌عامل ----------
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ---------- ادیتورها ----------
+.vscode/
+.idea/
+*.swp
+
+# ---------- Node (ابزارهای توسعه) ----------
+node_modules/
+package-lock.json
+npm-debug.log*
+
+# ---------- خروجی‌های موقت ابزارها و دارایی‌های باینری محلی ----------
+*.log
+/ui-test.html
+_ui-test/
+tmp/
+icons/*.png
+fonts/*.woff2
+fonts/*.woff
+fonts/*.ttf

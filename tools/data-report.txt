@@ -1,0 +1,40 @@
+=== Flange & Stud Bolt Finder - data build report ===
+sizes            : 39
+bolting records  : 410
+   B16.5         : 242
+   B16.47         : 168
+   RF / RTJ       : 300 / 110
+   medium conf.   : 20
+wrench records   : 41 (inch 26, metric 15)
+class coverage   : {"ASME B16.47 C150":36,"ASME B16.47 C300":36,"ASME B16.47 C400":36,"ASME B16.47 C600":36,"ASME B16.47 C900":24,"ASME B16.5 C1500":38,"ASME B16.5 C150":38,"ASME B16.5 C2500":28,"ASME B16.5 C300":40,"ASME B16.5 C400":20,"ASME B16.5 C600":40,"ASME B16.5 C900":38}
+deviation calc vs standard stud length (RF, 4.5 gasket, 6 mm projection per end):
+   model matched  : 134 / 409 records
+     ASME B16.47 C150 A: matched 7/18 maxDelta=13.6 mm
+     ASME B16.47 C150 B: matched 18/18 maxDelta=6.2 mm
+     ASME B16.47 C300 A: matched 0/18 maxDelta=16.7 mm
+     ASME B16.47 C300 B: matched 16/18 maxDelta=16.9 mm
+     ASME B16.47 C400 A: matched 0/18 maxDelta=23.2 mm
+     ASME B16.47 C400 B: matched 17/18 maxDelta=8.4 mm
+     ASME B16.47 C600 A: matched 0/18 maxDelta=48.4 mm
+     ASME B16.47 C600 B: matched 15/18 maxDelta=9 mm
+     ASME B16.47 C900 A: matched 0/12 maxDelta=56.1 mm
+     ASME B16.47 C900 B: matched 9/12 maxDelta=8.9 mm
+     ASME B16.5 C150: matched 20/38 maxDelta=NaN mm
+     ASME B16.5 C1500: matched 0/38 maxDelta=NaN mm
+     ASME B16.5 C2500: matched 1/28 maxDelta=NaN mm
+     ASME B16.5 C300: matched 20/40 maxDelta=NaN mm
+     ASME B16.5 C400: matched 6/20 maxDelta=15.9 mm
+     ASME B16.5 C600: matched 4/40 maxDelta=NaN mm
+     ASME B16.5 C900: matched 1/37 maxDelta=NaN mm
+   mean |delta|   : 9.8 mm   max |delta|: 56.1 mm
+   largest deltas :
+     ASMEB16.47-ASME B16.47 Series A-36-900-RF std=603 calc=546.9 delta=-56.1
+     ASMEB16.47-ASME B16.47 Series A-34-900-RF std=584 calc=534.1 delta=-49.9
+     ASMEB16.47-ASME B16.47 Series A-32-900-RF std=558 calc=508.8 delta=-49.2
+     ASMEB16.47-ASME B16.47 Series A-36-600-RF std=450 calc=401.6 delta=-48.4
+     ASMEB16.47-ASME B16.47 Series A-32-600-RF std=419 calc=376.1 delta=-42.9
+     ASMEB16.47-ASME B16.47 Series A-34-600-RF std=425 calc=382.5 delta=-42.5
+     ASMEB16.47-ASME B16.47 Series A-46-900-RF std=723 calc=680.5 delta=-42.5
+     ASMEB16.47-ASME B16.47 Series A-30-900-RF std=520 calc=477.8 delta=-42.2
+sizes without any bolting record: 22
+files: flange-sizes.json 15802 B | flange-bolting.json 449992 B | stud-wrench-map.json 33678 B | settings.json 674 B | data-embedded.js 391334 B

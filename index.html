@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="dark light">
+<meta name="theme-color" content="#0d1117">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="فلنج‌یاب">
+<title>فلنج و استادبول یاب | Flange &amp; Stud Bolt Finder</title>
+<meta name="description" content="جستجوی آفلاین تعداد و اندازه استادبول، طول استادبول و سایز آچار مهره برای فلنج‌های ASME B16.5 و ASME B16.47">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icons/favicon.svg" type="image/svg+xml">
+<link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="icons/icon-512.png">
+<link rel="apple-touch-icon" sizes="180x180" href="icons/icon-192.png">
+<link rel="apple-touch-icon" sizes="192x192" href="icons/icon-192.png">
+<link rel="apple-touch-icon" sizes="512x512" href="icons/icon-512.png">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<a class="skip-link" href="#main">پرش به محتوای اصلی</a>
+
+<header class="app-header">
+  <div class="brand">
+    <span class="brand-logo" aria-hidden="true">
+      <svg viewBox="0 0 48 48" width="40" height="40" role="img">
+        <circle cx="24" cy="24" r="21" fill="none" stroke="currentColor" stroke-width="3"/>
+        <circle cx="24" cy="24" r="9" fill="none" stroke="currentColor" stroke-width="3"/>
+        <g fill="currentColor">
+          <circle cx="24" cy="7" r="2.6"/><circle cx="24" cy="41" r="2.6"/>
+          <circle cx="7" cy="24" r="2.6"/><circle cx="41" cy="24" r="2.6"/>
+          <circle cx="12" cy="12" r="2.6"/><circle cx="36" cy="36" r="2.6"/>
+          <circle cx="36" cy="12" r="2.6"/><circle cx="12" cy="36" r="2.6"/>
+        </g>
+      </svg>
+    </span>
+    <div class="brand-text">
+      <p>Flange &amp; Stud Bolt Finder — ASME B16.5 / B16.47 / B18.2.2 — کاملاً آفلاین</p>
+    </div>
+  </div>
+  <div class="header-actions">
+    <span class="badge badge-datasource" id="dataSourceBadge" title="منبع داده‌های بارگذاری‌شده">در حال بارگذاری…</span>
+    <button type="button" class="btn btn-ghost" id="themeToggle" aria-pressed="false">
+      <span class="ico" aria-hidden="true">🌙</span><span id="themeToggleLabel">حالت تاریک</span>
+    </button>
+  </div>
+</header>
+
+<nav class="tabs" role="tablist" aria-label="بخش‌های برنامه">
+  <button type="button" class="tab is-active" role="tab" id="tab-flange" data-tab="flange" aria-selected="true" aria-controls="panel-flange">
+    <span class="tab-ico" aria-hidden="true">🔎</span><span>جستجوی فلنج</span>
+  </button>
+  <button type="button" class="tab" role="tab" id="tab-hole" data-tab="hole" aria-selected="false" aria-controls="panel-hole" tabindex="-1">
+    <span class="tab-ico" aria-hidden="true">⭕</span><span>جستجو بر اساس تعداد Hole فلنج</span>
+  </button>
+  <button type="button" class="tab" role="tab" id="tab-stud" data-tab="stud" aria-selected="false" aria-controls="panel-stud" tabindex="-1">
+    <span class="tab-ico" aria-hidden="true">🔧</span><span>جستجو بر اساس قطر Stud</span>
+  </button>
+  <button type="button" class="tab" role="tab" id="tab-history" data-tab="history" aria-selected="false" aria-controls="panel-history" tabindex="-1">
+    <span class="tab-ico" aria-hidden="true">⭐</span><span>تاریخچه و علاقه‌مندی‌ها</span>
+  </button>
+  <button type="button" class="tab" role="tab" id="tab-settings" data-tab="settings" aria-selected="false" aria-controls="panel-settings" tabindex="-1">
+    <span class="tab-ico" aria-hidden="true">⚙️</span><span>تنظیمات</span>
+  </button>
+  <button type="button" class="tab" role="tab" id="tab-help" data-tab="help" aria-selected="false" aria-controls="panel-help" tabindex="-1">
+    <span class="tab-ico" aria-hidden="true">📘</span><span>راهنما و استانداردها</span>
+  </button>
+</nav>
+
+<main id="main" class="app-main">
+
+  <!-- ================= TAB 1: FLANGE LOOKUP ================= -->
+  <section class="panel is-active" id="panel-flange" role="tabpanel" aria-labelledby="tab-flange" tabindex="0">
+    <div class="card search-card">
+      <div class="card-head">
+        <h2>جستجوی فلنج بر اساس سایز و کلاس</h2>
+        <p class="card-sub">سایز و کلاس فشاری را انتخاب کنید؛ تعداد استادبول، قطر، طول و سایز آچار مهره به‌صورت لحظهای نمایش داده میشود.</p>
+      </div>
+      <div class="form-grid">
+        <div class="field">
+          <label class="field-label" for="flSizeInput">سایز فلنج <span class="req">*</span></label>
+          <div class="combo" id="comboFlangeSize">
+            <input type="text" class="combo-input" id="flSizeInput" placeholder='مثال: 6 ، 6" ، DN150 ، 0.5' autocomplete="off" spellcheck="false"
+                   role="combobox" aria-expanded="false" aria-autocomplete="list" aria-controls="comboFlangeSizeList">
+            <button type="button" class="combo-clear" aria-label="پاک کردن سایز فلنج" hidden>×</button>
+            <ul class="combo-list" id="comboFlangeSizeList" role="listbox" aria-label="فهرست سایز فلنج" hidden></ul>
+          </div>
+          <p class="field-hint">NPS و DN — مثلاً ۶ اینچ برابر DN150 است.</p>
+        </div>
+
+        <div class="field">
+          <label class="field-label" for="flClassInput">کلاس فشاری <span class="req">*</span></label>
+          <div class="combo" id="comboFlangeClass">
+            <input type="text" class="combo-input" id="flClassInput" placeholder="مثال: 150 ، 300 ، Class 600" autocomplete="off" spellcheck="false"
+                   role="combobox" aria-expanded="false" aria-autocomplete="list" aria-controls="comboFlangeClassList">
+            <button type="button" class="combo-clear" aria-label="پاک کردن کلاس فشاری" hidden>×</button>
+            <ul class="combo-list" id="comboFlangeClassList" role="listbox" aria-label="فهرست کلاس فشاری" hidden></ul>
+          </div>
+          <p class="field-hint" id="flClassHint">کلاس‌های موجود برای سایز انتخابی فیلتر میشوند.</p>
+        </div>
+
+        <div class="field">
+          <label class="field-label" for="flFaceInput">نوع فیس فلنج</label>
+          <div class="combo" id="comboFlangeFace">
+            <input type="text" class="combo-input" id="flFaceInput" placeholder="RF / RTJ / FF" autocomplete="off" spellcheck="false"
+                   role="combobox" aria-expanded="false" aria-autocomplete="list" aria-controls="comboFlangeFaceList">
+            <button type="button" class="combo-clear" aria-label="پاک کردن نوع فیس" hidden>×</button>
+            <ul class="combo-list" id="comboFlangeFaceList" role="listbox" aria-label="فهرست نوع فیس" hidden></ul>
+          </div>
+          <p class="field-hint">RF = Raised Face · RTJ = Ring Type Joint · FF = Flat Face</p>
+        </div>
+
+        <div class="field">
+          <label class="field-label" for="flGasketInput">نوع گسکت</label>
+          <div class="combo" id="comboGasketType">
+            <input type="text" class="combo-input" id="flGasketInput" placeholder="Spiral Wound / RTJ Ring / Flat" autocomplete="off" spellcheck="false"
+                   role="combobox" aria-expanded="false" aria-autocomplete="list" aria-controls="comboGasketTypeList">
+            <button type="button" class="combo-clear" aria-label="پاک کردن نوع گسکت" hidden>×</button>
+            <ul class="combo-list" id="comboGasketTypeList" role="listbox" aria-label="فهرست نوع گسکت" hidden></ul>
+          </div>
+          <p class="field-hint">ضخامت گسکت در محاسبه طول استادبول استفاده می‌شود (قابل ویرایش در تنظیمات).</p>
+        </div>
+      </div>
+
+      <div class="row-actions">
+        <button type="button" class="btn btn-primary" id="flFindBtn"><span class="ico" aria-hidden="true">🔎</span>جستجو</button>
+        <button type="button" class="btn btn-ghost" id="flResetBtn">پاک‌کردن فرم</button>
+        <button type="button" class="btn btn-ghost" id="flFavoriteBtn" disabled><span class="ico" aria-hidden="true">⭐</span>افزودن به علاقه‌مندی‌ها</button>
+      </div>
+    </div>
+
+    <div class="result-area" id="flangeResult" aria-live="polite"></div>
+  </section>
+
+  <!-- ================= TAB 2: HOLE COUNT LOOKUP ================= -->
+  <section class="panel" id="panel-hole" role="tabpanel" aria-labelledby="tab-hole" tabindex="0" hidden>
+    <div class="card search-card">
+      <div class="card-head">
+        <h2>جستجو بر اساس تعداد Hole فلنج</h2>
+        <p class="card-sub">تعداد سوراخ‌های فلنج را وارد کنید تا تمام فلنج‌های منطبق به تفکیک قطر استادبول، سایز آچار و کلاس نمایش داده شوند.</p>
+      </div>
+      <div class="form-grid">
+        <div class="field">
+          <label class="field-label" for="holeCountInput">تعداد سوراخ فلنج <span class="req">*</span></label>
+          <div class="combo" id="comboHoleCount">
+            <input type="text" class="combo-input" id="holeCountInput" placeholder="مثال: 4 ، 8 ، 12 ، 16 ، 20 ، 24 ، 32" autocomplete="off" spellcheck="false"
+                   role="combobox" aria-expanded="false" aria-autocomplete="list" aria-controls="comboHoleCountList">
+            <button type="button" class="combo-clear" aria-label="پاک کردن تعداد سوراخ" hidden>×</button>
+            <ul class="combo-list" id="comboHoleCountList" role="listbox" aria-label="فهرست تعداد سوراخ فلنج" hidden></ul>
+          </div>
+          <p class="field-hint" id="holeCountHint">تعداد سوراخ را انتخاب کنید یا عدد آن را به فارسی یا لاتین تایپ نمایید.</p>
+        </div>
+      </div>
+
+      <div class="row-actions">
+        <button type="button" class="btn btn-primary" id="holeFindBtn"><span class="ico" aria-hidden="true">🔎</span>جستجو</button>
+        <button type="button" class="btn btn-ghost" id="holeResetBtn">پاک‌کردن فرم</button>
+        <button type="button" class="btn btn-ghost" id="holeFavoriteBtn" disabled><span class="ico" aria-hidden="true">⭐</span>افزودن به علاقه‌مندی‌ها</button>
+      </div>
+    </div>
+
+    <div class="result-area" id="holeResult" aria-live="polite"></div>
+  </section>
+
+  <!-- ================= TAB 3: STUD / WRENCH LOOKUP ================= -->
+  <section class="panel" id="panel-stud" role="tabpanel" aria-labelledby="tab-stud" tabindex="0" hidden>
+    <div class="card search-card">
+      <div class="card-head">
+        <h2>جستجوی قطر استادبول و سایز آچار</h2>
+        <p class="card-sub">قطر استادبول را به اینچ یا میلی‌متر وارد کنید تا سایز آچارخور مهره، اندازه و ارتفاع مهره را ببینید.</p>
+      </div>
+      <div class="form-grid">
+        <div class="field">
+          <label class="field-label" for="stUnit">واحد قطر Stud</label>
+          <div class="segmented" id="stUnit" role="radiogroup" aria-label="واحد قطر استادبول">
+            <button type="button" class="seg is-active" role="radio" aria-checked="true" data-unit="inch">اینچ (inch)</button>
+            <button type="button" class="seg" role="radio" aria-checked="false" data-unit="mm">میلی‌متر (mm)</button>
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="field-label" for="stDiaInput">قطر Stud <span class="req">*</span></label>
+          <div class="combo" id="comboStudDia">
+            <input type="text" class="combo-input" id="stDiaInput" placeholder='مثال: 3/4 ، 0.75 ، 19 ، 19.05' autocomplete="off" spellcheck="false"
+                   role="combobox" aria-expanded="false" aria-autocomplete="list" aria-controls="comboStudDiaList">
+            <button type="button" class="combo-clear" aria-label="پاک کردن قطر استادبول" hidden>×</button>
+            <ul class="combo-list" id="comboStudDiaList" role="listbox" aria-label="فهرست قطر استادبول" hidden></ul>
+          </div>
+          <p class="field-hint" id="stDiaHint">می‌توانید کسر، عدد اعشاری اینچ یا معادل میلی‌متری را تایپ کنید.</p>
+        </div>
+
+        <div class="field">
+          <label class="field-label" for="stNutSelect">نوع مهره مبنای محاسبه</label>
+          <select class="input select" id="stNutSelect">
+            <option value="heavy">مهره سنگین Heavy Hex — ASME B18.2.2 (استاندارد فلنج)</option>
+            <option value="regular">مهره ششگوش معمولی Regular Hex — ASME B18.2.2</option>
+            <option value="auto">هر دو (نمایش همزمان)</option>
+          </select>
+          <p class="field-hint">برای بولتینگ فلنج، مهره سنگین (A194 2H) مرسوم است.</p>
+        </div>
+      </div>
+
+      <div class="row-actions">
+        <button type="button" class="btn btn-primary" id="stFindBtn"><span class="ico" aria-hidden="true">🔎</span>جستجو</button>
+        <button type="button" class="btn btn-ghost" id="stResetBtn">پاک‌کردن فرم</button>
+        <button type="button" class="btn btn-ghost" id="stFavoriteBtn" disabled><span class="ico" aria-hidden="true">⭐</span>افزودن به علاقه‌مندی‌ها</button>
+      </div>
+    </div>
+
+    <div class="result-area" id="studResult" aria-live="polite"></div>
+  </section>
+
+  <!-- ================= TAB 4: HISTORY & FAVORITES ================= -->
+  <section class="panel" id="panel-history" role="tabpanel" aria-labelledby="tab-history" tabindex="0" hidden>
+    <div class="card">
+      <div class="card-head">
+        <h2>علاقه‌مندی‌ها</h2>
+        <p class="card-sub">برای دسترسی سریع روی هر چیپ کلیک کنید؛ نتیجه بلافاصله نمایش داده می‌شود.</p>
+      </div>
+      <div class="chips" id="favoriteChips"></div>
+      <div class="row-actions">
+        <button type="button" class="btn btn-ghost" id="favExportBtn">خروجی JSON علاقه‌مندی‌ها</button>
+        <button type="button" class="btn btn-danger" id="favClearBtn">حذف همه علاقه‌مندی‌ها</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-head">
+        <h2>تاریخچه جستجوها</h2>
+        <p class="card-sub">آخرین جستجوها در همین مرورگر (localStorage) ذخیره می‌شوند و به اینترنت ارسال نمی‌شوند.</p>
+      </div>
+      <div class="table-wrap">
+        <table class="data-table" id="historyTable">
+          <thead>
+            <tr>
+              <th>زمان</th><th>نوع</th><th>ورودی</th><th>خلاصه نتیجه</th><th>عملیات</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+      <p class="empty-state" id="historyEmpty">هنوز جستجویی ثبت نشده است.</p>
+      <div class="row-actions">
+        <button type="button" class="btn btn-ghost" id="histExportBtn">خروجی CSV تاریخچه</button>
+        <button type="button" class="btn btn-danger" id="histClearBtn">حذف تاریخچه</button>
+      </div>
+    </div>
+  </section>
+
+<!-- ================= TAB 5: SETTINGS ================= -->
+  <section class="panel" id="panel-settings" role="tabpanel" aria-labelledby="tab-settings" tabindex="0" hidden>
+    <div class="card">
+      <div class="card-head">
+        <h2>پارامترهای محاسبه طول استادبول</h2>
+        <p class="card-sub">رابطه محاسبه: طول استادبول = (تعداد فلنج × ضخامت فلنج) + ضخامت گسکت + (۲ × ارتفاع مهره) + (۲ × بیرونزدگی رزوه از هر سر)</p>
+      </div>
+      <div class="form-grid form-grid-settings">
+        <div class="field">
+          <label class="field-label" for="setThreadProjection">بیرونزدگی رزوه از هر سر (mm)</label>
+          <input class="input" type="number" id="setThreadProjection" min="0" max="40" step="0.5">
+          <p class="field-hint">پیش‌فرض ۶ mm در هر انتها؛ با این مقدار طول‌های جدول ASME B16.5 بازتولید می‌شود.</p>
+        </div>
+        <div class="field">
+          <label class="field-label" for="setSwGasket">ضخامت گسکت اسپیرال ووند (mm)</label>
+          <input class="input" type="number" id="setSwGasket" min="0" max="30" step="0.5">
+          <p class="field-hint">جدول‌های استاندارد بر پایه گسکت ۴٫۵ mm فشرده‌شده به ۳ mm هستند.</p>
+        </div>
+        <div class="field">
+          <label class="field-label" for="setFlatGasket">ضخامت گسکت تخت (mm)</label>
+          <input class="input" type="number" id="setFlatGasket" min="0" max="30" step="0.5">
+        </div>
+        <div class="field">
+          <label class="field-label" for="setRtjGasket">ضخامت مؤثر گسکت RTJ (mm)</label>
+          <input class="input" type="number" id="setRtjGasket" min="0" max="60" step="0.5">
+          <p class="field-hint">در RTJ نشست رینگ داخل شیار دو فلنج لحاظ می‌شود؛ طول جدول استاندارد مبنا است.</p>
+        </div>
+        <div class="field">
+          <label class="field-label" for="setNutMethod">روش تعیین ارتفاع مهره</label>
+          <select class="input select" id="setNutMethod">
+            <option value="heavy_hex_table">جدول مهره سنگین ASME B18.2.2</option>
+            <option value="regular_hex_table">جدول مهره معمولی ASME B18.2.2</option>
+            <option value="factor_diameter">ضریب × قطر استادبول</option>
+          </select>
+        </div>
+        <div class="field">
+          <label class="field-label" for="setNutFactor">ضریب ارتفاع مهره (حالت ضریب × قطر)</label>
+          <input class="input" type="number" id="setNutFactor" min="0.5" max="1.5" step="0.01">
+        </div>
+        <div class="field">
+          <label class="field-label" for="setFlangeCount">تعداد فلنج در اتصال</label>
+          <input class="input" type="number" id="setFlangeCount" min="1" max="4" step="1">
+          <p class="field-hint">حالت معمول دو فلنج (۲) است.</p>
+        </div>
+        <div class="field">
+          <label class="field-label" for="setRoundMode">گِردکردن طول نهایی</label>
+          <select class="input select" id="setRoundMode">
+            <option value="up_1mm">گِرد به بالا — میلی‌متر صحیح</option>
+            <option value="up_5mm">گِرد به بالا — مضرب ۵ mm</option>
+            <option value="up_10mm">گِرد به بالا — مضرب ۱۰ mm</option>
+            <option value="nearest_1mm">نزدیک‌ترین میلی‌متر</option>
+            <option value="none">بدون گِردکردن</option>
+          </select>
+        </div>
+        <div class="field">
+          <label class="field-label" for="setWarnDelta">حد هشدار اختلاف با جدول استاندارد (mm)</label>
+          <input class="input" type="number" id="setWarnDelta" min="1" max="60" step="1">
+        </div>
+      </div>
+      <div class="row-actions">
+        <button type="button" class="btn btn-primary" id="setSaveBtn">ذخیره تنظیمات</button>
+        <button type="button" class="btn btn-ghost" id="setResetBtn">بازنشانی به پیش‌فرض</button>
+      </div>
+      <p class="save-note" id="setSaveNote" hidden>تنظیمات ذخیره شد.</p>
+    </div>
+<div class="card">
+      <div class="card-head">
+        <h2>مدیریت دیتابیس محلی (JSON)</h2>
+        <p class="card-sub">فایل‌های داده در پوشه <code>data/</code> هستند. برای ویرایش، JSON را تغییر دهید و از همین بخش بارگذاری کنید، یا فایل را با ویرایشگر متن به‌روز کنید و صفحه را دوباره باز کنید.</p>
+      </div>
+      <div class="status-grid" id="dataStatusGrid"></div>
+      <div class="row-actions">
+        <label class="btn btn-ghost file-btn">
+          <span class="ico" aria-hidden="true">⬆️</span>بارگذاری flange-bolting.json
+          <input type="file" id="importBolting" accept=".json,application/json" hidden>
+        </label>
+        <label class="btn btn-ghost file-btn">
+          <span class="ico" aria-hidden="true">⬆️</span>بارگذاری stud-wrench-map.json
+          <input type="file" id="importWrench" accept=".json,application/json" hidden>
+        </label>
+        <label class="btn btn-ghost file-btn">
+          <span class="ico" aria-hidden="true">⬆️</span>بارگذاری flange-sizes.json
+          <input type="file" id="importSizes" accept=".json,application/json" hidden>
+        </label>
+        <button type="button" class="btn btn-ghost" id="exportDataBtn"><span class="ico" aria-hidden="true">⬇️</span>خروجی بسته داده فعلی</button>
+        <button type="button" class="btn btn-ghost" id="exportSettingsBtn"><span class="ico" aria-hidden="true">⚙️</span>خروجی settings.json</button>
+        <button type="button" class="btn btn-danger" id="clearOverridesBtn">حذف داده‌های بارگذاری‌شده (بازگشت به فایل اصلی)</button>
+      </div>
+      <p class="field-hint" id="importStatus" aria-live="polite"></p>
+    </div>
+
+    <div class="card">
+      <div class="card-head">
+        <h2>نمایش و رفتار برنامه</h2>
+      </div>
+      <div class="form-grid form-grid-settings">
+        <div class="field">
+          <label class="field-label" for="setTheme">پوسته (Theme)</label>
+          <select class="input select" id="setTheme">
+            <option value="dark">تاریک</option>
+            <option value="light">روشن</option>
+          </select>
+        </div>
+        <div class="field">
+          <label class="field-label" for="setMaxHistory">حداکثر تعداد تاریخچه</label>
+          <input class="input" type="number" id="setMaxHistory" min="5" max="200" step="5">
+        </div>
+        <div class="field field-check">
+          <label class="check">
+            <input type="checkbox" id="setShowAvailableClasses">
+            <span>فقط کلاس‌های موجود در دیتابیس برای سایز انتخابی نمایش داده شود</span>
+          </label>
+        </div>
+        <div class="field field-check">
+          <label class="check">
+            <input type="checkbox" id="setShowCalc">
+            <span>نمایش جزئیات محاسبه طول استادبول در نتیجه</span>
+          </label>
+        </div>
+        <div class="field field-check">
+          <label class="check">
+            <input type="checkbox" id="setShowDiagram">
+            <span>نمایش دیاگرام ابعادی در نتایج</span>
+          </label>
+        </div>
+      </div>
+      <div class="row-actions">
+        <button type="button" class="btn btn-primary" id="setSaveBtn2">ذخیره تنظیمات نمایش</button>
+      </div>
+    </div>
+  </section>
+<!-- ================= TAB 6: HELP ================= -->
+  <section class="panel" id="panel-help" role="tabpanel" aria-labelledby="tab-help" tabindex="0" hidden>
+    <div class="card">
+      <div class="card-head"><h2>استانداردهای مرجع</h2></div>
+      <div class="help-grid">
+        <article class="help-item">
+          <h3>ASME B16.5</h3>
+          <p>فلنج‌ها و اتصالات فلنجی لوله — NPS ½ تا NPS 24 (DN15 تا DN600) در کلاس‌های ۱۵۰، ۳۰۰، ۴۰۰، ۶۰۰، ۹۰۰، ۱۵۰۰ و ۲۵۰۰ (کلاس ۲۵۰۰ فقط تا NPS 12 / DN300). این استاندارد تعداد سوراخ، قطر پیچ، قطر دایره پیچ، ضخامت حداقل فلنج و طول استادبول پیشنهادی را تعیین می‌کند.</p>
+        </article>
+        <article class="help-item">
+          <h3>ASME B16.47</h3>
+          <p>فلنج‌های بزرگ NPS 26 تا NPS 60 (DN650 تا DN1500). Series A برگرفته از MSS SP-44 و Series B برگرفته از API 605 است. فقط فلنج‌های Weld Neck و Blind را پوشش می‌دهد. برای کلاس‌های ۴۰۰، ۶۰۰ و ۹۰۰ در NPS 38 و بالاتر، ابعاد Series A و Series B یکسان است.</p>
+        </article>
+        <article class="help-item">
+          <h3>ASME B18.2.2</h3>
+          <p>مهره‌های ششگوش اینچی. در اتصالات فلنجی معمولاً مهره <strong>Heavy Hex</strong> همراه با استادبول A193 B7 و مهره A194 2H استفاده می‌شود؛ اندازه آچار همان «فاصله بین دو وجه» (Width Across Flats) مهره است.</p>
+        </article>
+        <article class="help-item">
+          <h3>ASME B18.31.2 / B1.1</h3>
+          <p>استادبول‌ها (Stud Bolts) سرتاسری رزوه می‌شوند؛ تا ۱ اینچ سری UNC و بالای ۱ اینچ سری 8-UN.</p>
+        </article>
+        <article class="help-item">
+          <h3>ASME B16.20</h3>
+          <p>رینگ‌های آب‌بندی فلزی فلنج‌های اتصال رینگی (RTJ):</p>
+          <ul class="help-list">
+            <li><strong>الف)</strong> سه سبک رینگ فلزی وجود دارد: R (بیضوی/هشت‌ضلعی، شماره‌های R11 تا R73 برای فلنج‌های ASME B16.5)، RX (فشارتقویت‌شده، قابل نشست در شیار R هم‌اندازه)، BX (فقط فلنج‌های API 6A/6BX با شماره‌های BX150 به بالا، تعویض‌ناپذیر با R/RX).</li>
+            <li><strong>ب)</strong> فیسینگ RTJ در ASME B16.5 برای کلاس‌های ۱۵۰ تا ۲۵۰۰ تعریف شده ولی در عرف مهندسی بیشتر برای کلاس ۶۰۰ و بالاتر و سرویس‌های فشار بالا/هیدروکربوری به‌کار می‌رود.</li>
+            <li><strong>ج)</strong> شماره دقیق رینگ تابع سایز و کلاس است و در کارت نتیجه نمایش داده می‌شود؛ کنترل نهایی با آخرین ویرایش استاندارد الزامی است.</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-head"><h2>رابطه محاسبه طول استادبول</h2></div>
+      <pre class="formula">L = n × t_flange + t_gasket + 2 × h_nut + 2 × p_thread
+
+n         = تعداد فلنج در اتصال (پیش‌فرض ۲)
+t_flange  = ضخامت فلنج از جدول استاندارد (mm)
+t_gasket  = ضخامت گسکت (SW 4.5 mm / تخت / RTJ — قابل ویرایش در تنظیمات)
+h_nut     = ارتفاع مهره سنگین ASME B18.2.2
+p_thread  = بیرون‌زدگی رزوه از هر سر (پیش‌فرض ۶ mm)</pre>
+      <p>طول‌های جدول‌های استاندارد بر پایه یک گسکت اسپایرال‌ووند ۴٫۵ mm (فشرده‌شده به ۳ mm) و مهره سنگین محاسبه شده‌اند؛ به همین دلیل طول «جدول» و طول «محاسبه‌شده» می‌توانند چند میلی‌متر اختلاف داشته باشند. <strong>طول جدول استاندارد مبنای سفارش خرید است.</strong></p>
+    </div>
+
+    <div class="card">
+      <div class="card-head"><h2>سلب مسئولیت مهندسی</h2></div>
+      <p class="disclaimer">نتایج باید با آخرین ویرایش استاندارد، مدارک پروژه و دیتاشیت سازنده کنترل شود.</p>
+      <ul class="help-list">
+        <li>رکوردهایی که در نتیجه با برچسب <span class="badge badge-warn">نیازمند بازبینی</span> نشان داده می‌شوند از جدول مرجع استخراج شده‌اند اما باید با آخرین ویرایش استاندارد کنترل شوند.</li>
+        <li>طول RTJ شامل نشستن رینگ در شیار دو فلنج است و با طول RF یکسان نیست.</li>
+        <li>در B16.47 Series A کلاس‌های ۶۰۰ و ۹۰۰، طول‌های جدول حاشیه اضافی دارند و از مدل ساده بیشتر هستند.</li>
+        <li>کلیدهای میان‌بر: در فهرست‌ها ↑ ↓ برای حرکت، Enter برای انتخاب، Esc برای بستن، Ctrl+P برای چاپ.</li>
+      </ul>
+    </div>
+  </section>
+</main>
+
+<footer class="app-footer">
+  <p>همه داده‌ها محلی هستند و هیچ اطلاعاتی به اینترنت ارسال نمی‌شود · نسخه <span id="appVersion">1.0.0</span> · ساخته‌شده برای مهندسان مکانیک، پایپینگ و صنایع نفت، گاز و پتروشیمی</p>
+  <p class="footer-warn">نتایج باید با آخرین ویرایش استاندارد، مدارک پروژه و دیتاشیت سازنده کنترل شود.</p>
+</footer>
+
+<noscript>
+  <p class="no-script">برای استفاده از این برنامه باید JavaScript در مرورگر فعال باشد.</p>
+</noscript>
+
+<script src="data/data-embedded.js"></script>
+<script src="js/search.js"></script>
+<script src="js/calculations.js"></script>
+<script src="js/storage.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/app.js"></script>
+<script>
+  // Register Service Worker for PWA (only when running on http/https protocol)
+  if ('serviceWorker' in navigator && (window.location.protocol === 'http:' || window.location.protocol === 'https:')) {
+    window.addEventListener('load', function () {
+      navigator.serviceWorker.register('./sw.js')
+        .then(function (reg) {
+          console.log('[PWA] Service Worker registered with scope:', reg.scope);
+        })
+        .catch(function (err) {
+          console.warn('[PWA] Service Worker registration failed:', err);
+        });
+    });
+  }
+</script>
+</body>
+</html>

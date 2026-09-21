@@ -1,0 +1,26 @@
+{
+  "_readme": [
+    "شِمای stud-wrench-map.json - نگاشت قطر استادبول به سایز آچار و مهره.",
+    "رکوردهای system=inch بر اساس ASME B18.2.2 (مهره سنگین/معمولی) و system=metric بر اساس ISO 4032/4033 هستند.",
+    "برای افزودن سایز جدید فیلدها را با الگوی رکوردهای موجود پر کنید."
+  ],
+  "_fields": {
+    "system": "inch | metric",
+    "bolt_diameter_inch": "قطر استادبول (اینچ کسری) - فقط رکوردهای inch",
+    "bolt_diameter_decimal_inch": "قطر استادبول (اینچ اعشاری)",
+    "bolt_diameter_mm": "قطر استادبول (mm)",
+    "thread": "رزوه: 3/4-10 UNC ، 2-8 UN ، M20×2.5 و ...",
+    "nut_standard": "ASME B18.2.2 | ISO 4032 / ISO 4033",
+    "nut_type": "نوع مهره اصلی",
+    "nut_across_flats_mm": "فاصله دو وجه مهره (mm)",
+    "nut_across_flats_inch": "فاصله دو وجه مهره (اینچ)",
+    "nut_height_mm": "ارتفاع مهره (mm)",
+    "nut_height_inch": "ارتفاع مهره (اینچ)",
+    "wrench_size_mm": "سایز آچار استاندارد متریک نزدیک (mm)",
+    "wrench_size_inch": "سایز آچار (اینچ کسری) معادل AF",
+    "alt_nut_type": "نوع مهره دوم (اختیاری): regular_hex / heavy hex",
+    "alt_*": "ابعاد و آچار مهره دوم",
+    "confidence": "high (جدول B18.2.2) | medium (متریک - بازبینی شود)",
+    "notes": "یادداشت"
+  }
+}

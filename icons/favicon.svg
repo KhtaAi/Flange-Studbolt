@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48">
+  <!-- Flange & Stud Bolt Finder - local inline favicon (no network) -->
+  <rect width="48" height="48" rx="10" fill="#0d1117"/>
+  <circle cx="24" cy="24" r="17" fill="none" stroke="#36c2a1" stroke-width="2.5"/>
+  <circle cx="24" cy="24" r="7" fill="none" stroke="#36c2a1" stroke-width="2.5"/>
+  <g fill="#6db1ff">
+    <circle cx="24" cy="10" r="2.2"/><circle cx="24" cy="38" r="2.2"/>
+    <circle cx="10" cy="24" r="2.2"/><circle cx="38" cy="24" r="2.2"/>
+    <circle cx="14" cy="14" r="2.2"/><circle cx="34" cy="34" r="2.2"/>
+    <circle cx="34" cy="14" r="2.2"/><circle cx="14" cy="34" r="2.2"/>
+  </g>
+</svg>

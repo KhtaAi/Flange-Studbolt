@@ -1,0 +1,35 @@
+{
+  "_readme": [
+    "شِمای داده flange-bolting.json - هر رکورد یک ترکیب فلنج/کلاس/فیس است.",
+    "برای تکمیل دیتابیس، رکوردها را با همین فیلدها اضافه کنید (از تب تنظیمات برنامه هم می‌توانید JSON بارگذاری کنید).",
+    "فیلدهای اجباری: standard, series, nps_inch, dn, pressure_class, flange_face, number_of_bolts, bolt_diameter_inch, bolt_diameter_mm, standard_stud_length_mm",
+    "confidence: high = تطبیق‌شده با جدول مرجع | medium = نیازمند بازبینی با آخرین ویرایش استاندارد",
+    "model_fit: matched = طول جدول با مدل ساده همخوان است | table_governs = مقدار جدول مبناست (حاشیه اضافی یا RTJ)"
+  ],
+  "_fields": {
+    "standard": "ASME B16.5 | ASME B16.47",
+    "series": "B16.5 | ASME B16.47 Series A | ASME B16.47 Series B",
+    "nps_inch": "سایز اسمی لوله به اینچ (نمونه: 6 ، 1-1/4)",
+    "dn": "معادل DN",
+    "pressure_class": "150 | 300 | 400 | 600 | 900 | 1500 | 2500",
+    "flange_face": "RF | RTJ",
+    "number_of_bolts": "تعداد استادبول",
+    "bolt_diameter_inch": "قطر استادبول به اینچ (کسر)",
+    "bolt_diameter_decimal_inch": "قطر استادبول به اینچ (اعشاری)",
+    "bolt_diameter_mm": "قطر استادبول به میلی‌متر",
+    "flange_thickness_mm": "حداقل ضخامت فلنج (mm) — برای محاسبه طول",
+    "standard_stud_length_mm": "طول استادبول جدول استاندارد (mm) — مبنای خرید",
+    "standard_stud_length_inch": "طول استادبول جدول (اینچ کسری)",
+    "nut_standard": "ASME B18.2.2",
+    "nut_across_flats_mm": "فاصله دو وجه مهره (mm)",
+    "nut_height_mm": "ارتفاع مهره (mm)",
+    "wrench_size_mm": "سایز آچار پیشنهادی (mm)",
+    "wrench_size_inch": "سایز آچار (اینچ)",
+    "thread": "سری رزوه (UNC / 8-UN)",
+    "confidence": "high | medium",
+    "model_fit": "matched | table_governs | unknown",
+    "stud_length_extra_vs_rf_mm": "فقط RTJ: مقدار اضافه طول نسبت به RF",
+    "notes": "یادداشت مهندسی (فارسی)",
+    "source": "ارجاع منبع جدول"
+  }
+}

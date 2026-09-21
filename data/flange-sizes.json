@@ -1,0 +1,731 @@
+{
+  "meta": {
+    "dataset": "Flange & Stud Bolt Finder - local engineering dataset",
+    "generated": "2026-09-19",
+    "standards": [
+      "ASME B16.5",
+      "ASME B16.47 (A/B)",
+      "ASME B18.2.2",
+      "ASME B18.31.2",
+      "ISO 4032/4033 (metric nuts)"
+    ],
+    "sources": [
+      "ASME B16.5 flange bolt chart (bolt count, bolt dia, stud length RF/RTJ)",
+      "ASME B16.5 min. flange thickness tables, class 150-2500 (mm)",
+      "ASME B16.5 class 400 bolting table (mm, 7 mm raised face)",
+      "ASME B16.47 Series A/B dimension + bolting tables, NPS 26-60 (mm)",
+      "ASME B18.2.2 heavy/regular hex nut dimensional tables (inch)"
+    ],
+    "disclaimer": "داده‌ها از جداول عمومی استاندارد استخراج شده‌اند. نتایج باید با آخرین ویرایش استاندارد، مدارک پروژه و دیتاشیت سازنده کنترل شود."
+  },
+  "sizes": [
+    {
+      "nps_inch": "1/2",
+      "nps_decimal_inch": 0.5,
+      "dn": 15,
+      "standard": "ASME B16.5",
+      "aliases": [
+        "1/2",
+        "1/2\"",
+        "NPS 1/2",
+        "1/2 inch",
+        "DN15",
+        "DN 15",
+        "15",
+        "0.5",
+        "0.5\"",
+        "1 2"
+      ],
+      "notes": ""
+    },
+    {
+      "nps_inch": "3/4",
+      "nps_decimal_inch": 0.75,
+      "dn": 20,
+      "standard": "ASME B16.5",
+      "aliases": [
+        "3/4",
+        "3/4\"",
+        "NPS 3/4",
+        "3/4 inch",
+        "DN20",
+        "DN 20",
+        "20",
+        "0.75",
+        "0.75\"",
+        "3 4"
+      ],
+      "notes": ""
+    },
+    {
+      "nps_inch": "1",
+      "nps_decimal_inch": 1,
+      "dn": 25,
+      "standard": "ASME B16.5",
+      "aliases": [
+        "1",
+        "1\"",
+        "NPS 1",
+        "1 inch",
+        "DN25",
+        "DN 25",
+        "25",
+        "1",
+        "1\""
+      ],
+      "notes": ""
+    },
+    {
+      "nps_inch": "1-1/4",
+      "nps_decimal_inch": 1.25,
+      "dn": 32,
+      "standard": "ASME B16.5",
+      "aliases": [
+        "1-1/4",
+        "1-1/4\"",
+        "NPS 1-1/4",
+        "1-1/4 inch",
+        "DN32",
+        "DN 32",
+        "32",
+        "1.25",
+        "1.25\"",
+        "1-1 4"
+      ],
+      "notes": ""
+    },
+    {
+      "nps_inch": "1-1/2",
+      "nps_decimal_inch": 1.5,
+      "dn": 40,
+      "standard": "ASME B16.5",
+      "aliases": [
+        "1-1/2",
+        "1-1/2\"",
+        "NPS 1-1/2",
+        "1-1/2 inch",
+        "DN40",
+        "DN 40",
+        "40",
+        "1.5",
+        "1.5\"",
+        "1-1 2"
+      ],
+      "notes": ""
+    },
+    {
+      "nps_inch": "2",
+      "nps_decimal_inch": 2,
+      "dn": 50,
+      "standard": "ASME B16.5",
+      "aliases": [
+        "2",
+        "2\"",
+        "NPS 2",
+        "2 inch",
+        "DN50",
+        "DN 50",
+        "50",
+        "2",
+        "2\""
+      ],
+      "notes": ""
+    },
+    {
+      "nps_inch": "2-1/2",
+      "nps_decimal_inch": 2.5,
+      "dn": 65,
+      "standard": "ASME B16.5",
+      "aliases": [
+        "2-1/2",
+        "2-1/2\"",
+        "NPS 2-1/2",
+        "2-1/2 inch",
+        "DN65",
+        "DN 65",
+        "65",
+        "2.5",
+        "2.5\"",
+        "2-1 2"
+      ],
+      "notes": ""
+    },
+    {
+      "nps_inch": "3",
+      "nps_decimal_inch": 3,
+      "dn": 80,
+      "standard": "ASME B16.5",
+      "aliases": [
+        "3",
+        "3\"",
+        "NPS 3",
+        "3 inch",
+        "DN80",
+        "DN 80",
+        "80",
+        "3",
+        "3\""
+      ],
+      "notes": ""
+    },
+    {
+      "nps_inch": "3-1/2",
+      "nps_decimal_inch": 3.5,
+      "dn": 90,
+      "standard": "ASME B16.5",
+      "aliases": [
+        "3-1/2",
+        "3-1/2\"",
+        "NPS 3-1/2",
+        "3-1/2 inch",
+        "DN90",
+        "DN 90",
+        "90",
+        "3.5",
+        "3.5\"",
+        "3-1 2"
+      ],
+      "notes": ""
+    },
+    {
+      "nps_inch": "4",
+      "nps_decimal_inch": 4,
+      "dn": 100,
+      "standard": "ASME B16.5",
+      "aliases": [
+        "4",
+        "4\"",
+        "NPS 4",
+        "4 inch",
+        "DN100",
+        "DN 100",
+        "100",
+        "4",
+        "4\""
+      ],
+      "notes": ""
+    },
+    {
+      "nps_inch": "5",
+      "nps_decimal_inch": 5,
+      "dn": 125,
+      "standard": "ASME B16.5",
+      "aliases": [
+        "5",
+        "5\"",
+        "NPS 5",
+        "5 inch",
+        "DN125",
+        "DN 125",
+        "125",
+        "5",
+        "5\""
+      ],
+      "notes": ""
+    },
+    {
+      "nps_inch": "6",
+      "nps_decimal_inch": 6,
+      "dn": 150,
+      "standard": "ASME B16.5",
+      "aliases": [
+        "6",
+        "6\"",
+        "NPS 6",
+        "6 inch",
+        "DN150",
+        "DN 150",
+        "150",
+        "6",
+        "6\""
+      ],
+      "notes": ""
+    },
+    {
+      "nps_inch": "8",
+      "nps_decimal_inch": 8,
+      "dn": 200,
+      "standard": "ASME B16.5",
+      "aliases": [
+        "8",
+        "8\"",
+        "NPS 8",
+        "8 inch",
+        "DN200",
+        "DN 200",
+        "200",
+        "8",
+        "8\""
+      ],
+      "notes": ""
+    },
+    {
+      "nps_inch": "10",
+      "nps_decimal_inch": 10,
+      "dn": 250,
+      "standard": "ASME B16.5",
+      "aliases": [
+        "10",
+        "10\"",
+        "NPS 10",
+        "10 inch",
+        "DN250",
+        "DN 250",
+        "250",
+        "10",
+        "10\""
+      ],
+      "notes": ""
+    },
+    {
+      "nps_inch": "12",
+      "nps_decimal_inch": 12,
+      "dn": 300,
+      "standard": "ASME B16.5",
+      "aliases": [
+        "12",
+        "12\"",
+        "NPS 12",
+        "12 inch",
+        "DN300",
+        "DN 300",
+        "300",
+        "12",
+        "12\""
+      ],
+      "notes": ""
+    },
+    {
+      "nps_inch": "14",
+      "nps_decimal_inch": 14,
+      "dn": 350,
+      "standard": "ASME B16.5",
+      "aliases": [
+        "14",
+        "14\"",
+        "NPS 14",
+        "14 inch",
+        "DN350",
+        "DN 350",
+        "350",
+        "14",
+        "14\""
+      ],
+      "notes": ""
+    },
+    {
+      "nps_inch": "16",
+      "nps_decimal_inch": 16,
+      "dn": 400,
+      "standard": "ASME B16.5",
+      "aliases": [
+        "16",
+        "16\"",
+        "NPS 16",
+        "16 inch",
+        "DN400",
+        "DN 400",
+        "400",
+        "16",
+        "16\""
+      ],
+      "notes": ""
+    },
+    {
+      "nps_inch": "18",
+      "nps_decimal_inch": 18,
+      "dn": 450,
+      "standard": "ASME B16.5",
+      "aliases": [
+        "18",
+        "18\"",
+        "NPS 18",
+        "18 inch",
+        "DN450",
+        "DN 450",
+        "450",
+        "18",
+        "18\""
+      ],
+      "notes": ""
+    },
+    {
+      "nps_inch": "20",
+      "nps_decimal_inch": 20,
+      "dn": 500,
+      "standard": "ASME B16.5",
+      "aliases": [
+        "20",
+        "20\"",
+        "NPS 20",
+        "20 inch",
+        "DN500",
+        "DN 500",
+        "500",
+        "20",
+        "20\""
+      ],
+      "notes": ""
+    },
+    {
+      "nps_inch": "22",
+      "nps_decimal_inch": 22,
+      "dn": 550,
+      "standard": "ASME B16.5",
+      "aliases": [
+        "22",
+        "22\"",
+        "NPS 22",
+        "22 inch",
+        "DN550",
+        "DN 550",
+        "550",
+        "22",
+        "22\""
+      ],
+      "notes": "داده بولتینگ NPS 22 در دیتاست محلی موجود نیست؛ لطفاً از تب تنظیمات تکمیل کنید."
+    },
+    {
+      "nps_inch": "24",
+      "nps_decimal_inch": 24,
+      "dn": 600,
+      "standard": "ASME B16.5",
+      "aliases": [
+        "24",
+        "24\"",
+        "NPS 24",
+        "24 inch",
+        "DN600",
+        "DN 600",
+        "600",
+        "24",
+        "24\""
+      ],
+      "notes": ""
+    },
+    {
+      "nps_inch": "26",
+      "nps_decimal_inch": 26,
+      "dn": 650,
+      "standard": "ASME B16.47",
+      "aliases": [
+        "26",
+        "26\"",
+        "NPS 26",
+        "26 inch",
+        "DN650",
+        "DN 650",
+        "650",
+        "26",
+        "26\""
+      ],
+      "notes": "Series A = MSS SP-44 | Series B = API 605 | کلاسهای 400/600/900 برای NPS 38 و بالاتر بین Series A و B یکسان است."
+    },
+    {
+      "nps_inch": "28",
+      "nps_decimal_inch": 28,
+      "dn": 700,
+      "standard": "ASME B16.47",
+      "aliases": [
+        "28",
+        "28\"",
+        "NPS 28",
+        "28 inch",
+        "DN700",
+        "DN 700",
+        "700",
+        "28",
+        "28\""
+      ],
+      "notes": "Series A = MSS SP-44 | Series B = API 605 | کلاسهای 400/600/900 برای NPS 38 و بالاتر بین Series A و B یکسان است."
+    },
+    {
+      "nps_inch": "30",
+      "nps_decimal_inch": 30,
+      "dn": 750,
+      "standard": "ASME B16.47",
+      "aliases": [
+        "30",
+        "30\"",
+        "NPS 30",
+        "30 inch",
+        "DN750",
+        "DN 750",
+        "750",
+        "30",
+        "30\""
+      ],
+      "notes": "Series A = MSS SP-44 | Series B = API 605 | کلاسهای 400/600/900 برای NPS 38 و بالاتر بین Series A و B یکسان است."
+    },
+    {
+      "nps_inch": "32",
+      "nps_decimal_inch": 32,
+      "dn": 800,
+      "standard": "ASME B16.47",
+      "aliases": [
+        "32",
+        "32\"",
+        "NPS 32",
+        "32 inch",
+        "DN800",
+        "DN 800",
+        "800",
+        "32",
+        "32\""
+      ],
+      "notes": "Series A = MSS SP-44 | Series B = API 605 | کلاسهای 400/600/900 برای NPS 38 و بالاتر بین Series A و B یکسان است."
+    },
+    {
+      "nps_inch": "34",
+      "nps_decimal_inch": 34,
+      "dn": 850,
+      "standard": "ASME B16.47",
+      "aliases": [
+        "34",
+        "34\"",
+        "NPS 34",
+        "34 inch",
+        "DN850",
+        "DN 850",
+        "850",
+        "34",
+        "34\""
+      ],
+      "notes": "Series A = MSS SP-44 | Series B = API 605 | کلاسهای 400/600/900 برای NPS 38 و بالاتر بین Series A و B یکسان است."
+    },
+    {
+      "nps_inch": "36",
+      "nps_decimal_inch": 36,
+      "dn": 900,
+      "standard": "ASME B16.47",
+      "aliases": [
+        "36",
+        "36\"",
+        "NPS 36",
+        "36 inch",
+        "DN900",
+        "DN 900",
+        "900",
+        "36",
+        "36\""
+      ],
+      "notes": "Series A = MSS SP-44 | Series B = API 605 | کلاسهای 400/600/900 برای NPS 38 و بالاتر بین Series A و B یکسان است."
+    },
+    {
+      "nps_inch": "38",
+      "nps_decimal_inch": 38,
+      "dn": 950,
+      "standard": "ASME B16.47",
+      "aliases": [
+        "38",
+        "38\"",
+        "NPS 38",
+        "38 inch",
+        "DN950",
+        "DN 950",
+        "950",
+        "38",
+        "38\""
+      ],
+      "notes": "Series A = MSS SP-44 | Series B = API 605 | کلاسهای 400/600/900 برای NPS 38 و بالاتر بین Series A و B یکسان است."
+    },
+    {
+      "nps_inch": "40",
+      "nps_decimal_inch": 40,
+      "dn": 1000,
+      "standard": "ASME B16.47",
+      "aliases": [
+        "40",
+        "40\"",
+        "NPS 40",
+        "40 inch",
+        "DN1000",
+        "DN 1000",
+        "1000",
+        "40",
+        "40\""
+      ],
+      "notes": "Series A = MSS SP-44 | Series B = API 605 | کلاسهای 400/600/900 برای NPS 38 و بالاتر بین Series A و B یکسان است."
+    },
+    {
+      "nps_inch": "42",
+      "nps_decimal_inch": 42,
+      "dn": 1050,
+      "standard": "ASME B16.47",
+      "aliases": [
+        "42",
+        "42\"",
+        "NPS 42",
+        "42 inch",
+        "DN1050",
+        "DN 1050",
+        "1050",
+        "42",
+        "42\""
+      ],
+      "notes": "Series A = MSS SP-44 | Series B = API 605 | کلاسهای 400/600/900 برای NPS 38 و بالاتر بین Series A و B یکسان است."
+    },
+    {
+      "nps_inch": "44",
+      "nps_decimal_inch": 44,
+      "dn": 1100,
+      "standard": "ASME B16.47",
+      "aliases": [
+        "44",
+        "44\"",
+        "NPS 44",
+        "44 inch",
+        "DN1100",
+        "DN 1100",
+        "1100",
+        "44",
+        "44\""
+      ],
+      "notes": "Series A = MSS SP-44 | Series B = API 605 | کلاسهای 400/600/900 برای NPS 38 و بالاتر بین Series A و B یکسان است."
+    },
+    {
+      "nps_inch": "46",
+      "nps_decimal_inch": 46,
+      "dn": 1150,
+      "standard": "ASME B16.47",
+      "aliases": [
+        "46",
+        "46\"",
+        "NPS 46",
+        "46 inch",
+        "DN1150",
+        "DN 1150",
+        "1150",
+        "46",
+        "46\""
+      ],
+      "notes": "Series A = MSS SP-44 | Series B = API 605 | کلاسهای 400/600/900 برای NPS 38 و بالاتر بین Series A و B یکسان است."
+    },
+    {
+      "nps_inch": "48",
+      "nps_decimal_inch": 48,
+      "dn": 1200,
+      "standard": "ASME B16.47",
+      "aliases": [
+        "48",
+        "48\"",
+        "NPS 48",
+        "48 inch",
+        "DN1200",
+        "DN 1200",
+        "1200",
+        "48",
+        "48\""
+      ],
+      "notes": "Series A = MSS SP-44 | Series B = API 605 | کلاسهای 400/600/900 برای NPS 38 و بالاتر بین Series A و B یکسان است."
+    },
+    {
+      "nps_inch": "50",
+      "nps_decimal_inch": 50,
+      "dn": 1250,
+      "standard": "ASME B16.47",
+      "aliases": [
+        "50",
+        "50\"",
+        "NPS 50",
+        "50 inch",
+        "DN1250",
+        "DN 1250",
+        "1250",
+        "50",
+        "50\""
+      ],
+      "notes": "Series A = MSS SP-44 | Series B = API 605 | کلاسهای 400/600/900 برای NPS 38 و بالاتر بین Series A و B یکسان است."
+    },
+    {
+      "nps_inch": "52",
+      "nps_decimal_inch": 52,
+      "dn": 1300,
+      "standard": "ASME B16.47",
+      "aliases": [
+        "52",
+        "52\"",
+        "NPS 52",
+        "52 inch",
+        "DN1300",
+        "DN 1300",
+        "1300",
+        "52",
+        "52\""
+      ],
+      "notes": "Series A = MSS SP-44 | Series B = API 605 | کلاسهای 400/600/900 برای NPS 38 و بالاتر بین Series A و B یکسان است."
+    },
+    {
+      "nps_inch": "54",
+      "nps_decimal_inch": 54,
+      "dn": 1350,
+      "standard": "ASME B16.47",
+      "aliases": [
+        "54",
+        "54\"",
+        "NPS 54",
+        "54 inch",
+        "DN1350",
+        "DN 1350",
+        "1350",
+        "54",
+        "54\""
+      ],
+      "notes": "Series A = MSS SP-44 | Series B = API 605 | کلاسهای 400/600/900 برای NPS 38 و بالاتر بین Series A و B یکسان است."
+    },
+    {
+      "nps_inch": "56",
+      "nps_decimal_inch": 56,
+      "dn": 1400,
+      "standard": "ASME B16.47",
+      "aliases": [
+        "56",
+        "56\"",
+        "NPS 56",
+        "56 inch",
+        "DN1400",
+        "DN 1400",
+        "1400",
+        "56",
+        "56\""
+      ],
+      "notes": "Series A = MSS SP-44 | Series B = API 605 | کلاسهای 400/600/900 برای NPS 38 و بالاتر بین Series A و B یکسان است."
+    },
+    {
+      "nps_inch": "58",
+      "nps_decimal_inch": 58,
+      "dn": 1450,
+      "standard": "ASME B16.47",
+      "aliases": [
+        "58",
+        "58\"",
+        "NPS 58",
+        "58 inch",
+        "DN1450",
+        "DN 1450",
+        "1450",
+        "58",
+        "58\""
+      ],
+      "notes": "Series A = MSS SP-44 | Series B = API 605 | کلاسهای 400/600/900 برای NPS 38 و بالاتر بین Series A و B یکسان است."
+    },
+    {
+      "nps_inch": "60",
+      "nps_decimal_inch": 60,
+      "dn": 1500,
+      "standard": "ASME B16.47",
+      "aliases": [
+        "60",
+        "60\"",
+        "NPS 60",
+        "60 inch",
+        "DN1500",
+        "DN 1500",
+        "1500",
+        "60",
+        "60\""
+      ],
+      "notes": "Series A = MSS SP-44 | Series B = API 605 | کلاسهای 400/600/900 برای NPS 38 و بالاتر بین Series A و B یکسان است."
+    }
+  ]
+}
